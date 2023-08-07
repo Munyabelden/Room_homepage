@@ -1,37 +1,214 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+button {
+  outline: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+/* Room title */
+
+.title {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  left: 45%;
+  z-index: 100;
+  background: none;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* humberger menu */
+
+.menu {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border: none;
+  background: none;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.primary-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: -20%;
+  left: 0;
+  padding-block: 20px;
+  background: hsl(0, 0%, 100%);
+  width: 100%;
+  color: #000;
+  z-index: 1000;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+}
+
+.primary-navigation.render {
+  opacity: 1;
+  top: 0;
+}
+
+.primary-navigation .nav-link {
+  color: #000;
+  margin-inline-start: -10px;
+  text-transform: lowercase;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.primary-navigation .exit {
+  display: block;
+  border: none;
+  background: none;
+  margin-inline: 15px;
+}
 
 .carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-section {
-    flex: 0 0 100%;
-    transition: transform 0.3s ease;
-  }
-  .details {
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item img {
+  min-height: 43%;
+}
+
+.details h2 {
+  font-weight: 700;
+}
+
+.details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 85%;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 43%;
+  right: 0;
+  width: 40px;
+  padding-block: 3px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-inline: 10px;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prev-btn {
+  right: 40px;
+}
+
+p {
+  color: hsl(0, 0%, 63%);
+}
+
+.shoping-button {
+  display: block;
+  margin-block: 15px;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4.5px;
+  word-spacing: 6px;
+  color: hsl(0, 0%, 0%);
+  cursor: pointer;
+}
+
+/* About Section */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  gap: 15px;
+}
+
+.about .about-details {
+  margin: 15px auto;
+  width: 85%;
+}
+
+.about .about-details h3 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  color: hsl(0, 0%, 27%);
+}
+
+@media (min-width: 768px) {
+  .carousel-item .d-none img {
+     width: 58vw;
+     height: 80vh;
   }
 
-  .prev-btn,
-  .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
   .prev-btn {
-    left: 0;
+    background: #000;
+    right: 37.8%;
+    width: fit-content;
+    padding: 10px 15px;
+    top: 70.3vh;
   }
-  
+
   .next-btn {
-    right: 0;
+    background: #000;
+    right: 34.5%;
+    width: fit-content;
+    padding: 10px 15px;
+    top: 70.3vh;
   }
-  
+
+  .details {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    padding: 40px 60px;
+  }
+
+  .about {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .about .about-details {
+    padding: 20px;
+  }
+
+  .attribution {
+    font-size: 11px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
